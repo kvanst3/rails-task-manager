@@ -1,6 +1,11 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
 <div class="container">
   <h1 class="d-flex" style="justify-content: center"><%= @task.title %></h1>
+  <div class="d-flex" style="justify-content: right">
+    <%= link_to 'Edit this task', edit_task_path(@task) %>
+  </div>
   <div>
     <h3 style="background-color: rgb(220,220,220)"><%= @task.details %></h3>
     <div class="d-flex align-items-center">
@@ -9,7 +14,7 @@
       <% else %>
         <input type="checkbox" name="completed">
       <% end %>
-      <h3 class="ml-3"> <%= "This task is not completed yet?" %></h3>
+      <h3 class="ml-3"> <%= "This task is not completed yet" %></h3>
     </div>
   </div>
   <%= link_to 'back to list', tasks_path(@tasks) %>
